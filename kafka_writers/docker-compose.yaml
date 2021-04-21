@@ -21,7 +21,7 @@ services:
       - WAIT_ACK=1
       - CSC_LIST=ATDome ATDomeTrajectory ATAOS ATPneumatics ATHexapod ATPtg ATMCS
     volumes:
-      - startup.sh:/home/saluser/.startup.sh
+      - ./startup.sh:/home/saluser/.startup.sh
       - ${TS_IDL_DIRECTORY}:/opt/lsst/software/stack/miniconda/lib/python3.7/idl
       - ${OSPL_SHMEM_CONFIG}:${OSPL_MOUNT_POINT}
     tty: true
@@ -50,7 +50,7 @@ services:
       - CSC_LIST=CCHeaderService CCArchiver CCCamera
     stdin_open: true
     volumes:
-      - startup.sh:/home/saluser/.startup.sh
+      - ./startup.sh:/home/saluser/.startup.sh
       - ${TS_IDL_DIRECTORY}:/opt/lsst/software/stack/miniconda/lib/python3.7/idl
       - ${OSPL_SHMEM_CONFIG}:${OSPL_MOUNT_POINT}
     tty: true
@@ -79,7 +79,7 @@ services:
       - CSC_LIST=--file m1m3.yaml
     stdin_open: true
     volumes:
-      - startup.sh:/home/saluser/.startup.sh
+      - ./startup.sh:/home/saluser/.startup.sh
       - ${TS_IDL_DIRECTORY}:/opt/lsst/software/stack/miniconda/lib/python3.7/idl
       - ${OSPL_SHMEM_CONFIG}:${OSPL_MOUNT_POINT}
     tty: true
@@ -108,9 +108,9 @@ services:
       - CSC_LIST=MTRotator MTHexapod MTM2 MTMount Script
     stdin_open: true
     volumes:
-      - startup.sh:/home/saluser/.startup.sh
-      - ${TS_IDL_DIRECTORY}:/opt/lsst/software/stack/miniconda/lib/python3.7/idl
-      - ${OSPL_SHMEM_CONFIG}:${OSPL_MOUNT_POINT}
+      - ./startup.sh:/home/saluser/.startup.sh
+#      - ${TS_IDL_DIRECTORY}:/opt/lsst/software/stack/miniconda/lib/python3.7/idl
+#      - ${OSPL_SHMEM_CONFIG}:${OSPL_MOUNT_POINT}
     tty: true
     networks:
       dds-network:
@@ -137,7 +137,7 @@ services:
       - CSC_LIST=ATArchiver ATCamera ATHeaderService ATSpectrograph
     stdin_open: true
     volumes:
-      - startup.sh:/home/saluser/.startup.sh
+      - ./startup.sh:/home/saluser/.startup.sh
       - ${TS_IDL_DIRECTORY}:/opt/lsst/software/stack/miniconda/lib/python3.7/idl
       - ${OSPL_SHMEM_CONFIG}:${OSPL_MOUNT_POINT}
     tty: true
@@ -166,7 +166,7 @@ services:
       - CSC_LIST=MTAOS MTDome MTDomeTrajectory MTPtg
     stdin_open: true
     volumes:
-      - startup.sh:/home/saluser/.startup.sh
+      - ./startup.sh:/home/saluser/.startup.sh
       - ${TS_IDL_DIRECTORY}:/opt/lsst/software/stack/miniconda/lib/python3.7/idl
       - ${OSPL_SHMEM_CONFIG}:${OSPL_MOUNT_POINT}
     tty: true
@@ -195,7 +195,7 @@ services:
       - CSC_LIST=MTMount
     stdin_open: true
     volumes:
-      - startup.sh:/home/saluser/.startup.sh
+      - ./startup.sh:/home/saluser/.startup.sh
       - ${TS_IDL_DIRECTORY}:/opt/lsst/software/stack/miniconda/lib/python3.7/idl
       - ${OSPL_SHMEM_CONFIG}:${OSPL_MOUNT_POINT}
     tty: true
@@ -224,7 +224,7 @@ services:
       - CSC_LIST=GenericCamera Scheduler Script ScriptQueue Watcher
     stdin_open: true
     volumes:
-      - startup.sh:/home/saluser/.startup.sh
+      - ./startup.sh:/home/saluser/.startup.sh
       - ${TS_IDL_DIRECTORY}:/opt/lsst/software/stack/miniconda/lib/python3.7/idl
       - ${OSPL_SHMEM_CONFIG}:${OSPL_MOUNT_POINT}
     tty: true
@@ -253,7 +253,7 @@ services:
       - CSC_LIST=Test
     stdin_open: true
     volumes:
-      - startup.sh:/home/saluser/.startup.sh
+      - ./startup.sh:/home/saluser/.startup.sh
       - ${TS_IDL_DIRECTORY}:/opt/lsst/software/stack/miniconda/lib/python3.7/idl
       - ${OSPL_SHMEM_CONFIG}:${OSPL_MOUNT_POINT}
     tty: true
@@ -282,7 +282,7 @@ services:
       - CSC_LIST=DIMM DSM WeatherStation
     stdin_open: true
     volumes:
-      - startup.sh:/home/saluser/.startup.sh
+      - ./startup.sh:/home/saluser/.startup.sh
       - ${TS_IDL_DIRECTORY}:/opt/lsst/software/stack/miniconda/lib/python3.7/idl
       - ${OSPL_SHMEM_CONFIG}:${OSPL_MOUNT_POINT}
     tty: true
