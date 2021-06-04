@@ -58,12 +58,13 @@ services:
         max-file: "5"
         max-size: "10m"
 
-  ospl-daemon3:
+  ospl-amor01:
     image: ts-dockerhub.lsst.org/ospl-daemon:${CYCLE}
     container_name: ospl-daemon
     environment:
       - LSST_DDS_PARTITION_PREFIX=summit
       - LSST_DDS_RESPONSIVENESS_TIMEOUT=15s
+      - LSST_DDS_INTERFACE=em1
       - OSPL_INFOFILE=/tmp/ospl-info-daemon.log
       - OSPL_ERRORFILE=/tmp/ospl-error-daemon.log
     volumes:
@@ -72,21 +73,20 @@ services:
     tty: true
     ipc: host
     pid: host
-    networks:
-      dds-network:
-        ipv4_address: "139.229.170.29"
+    network_mode: host
     logging:
       driver: "json-file"
       options:
         max-file: "5"
         max-size: "10m"
 
-  ospl-daemon4:
+  ospl-amor02:
     image: ts-dockerhub.lsst.org/ospl-daemon:${CYCLE}
     container_name: ospl-daemon
     environment:
       - LSST_DDS_PARTITION_PREFIX=summit
       - LSST_DDS_RESPONSIVENESS_TIMEOUT=15s
+      - LSST_DDS_INTERFACE=em1
       - OSPL_INFOFILE=/tmp/ospl-info-daemon.log
       - OSPL_ERRORFILE=/tmp/ospl-error-daemon.log
     volumes:
@@ -104,7 +104,7 @@ services:
         max-file: "5"
         max-size: "10m"
 
-  ospl-daemon5:
+  ospl-hexrot:
     image: ts-dockerhub.lsst.org/ospl-daemon:${CYCLE}
     container_name: ospl-daemon
     environment:
